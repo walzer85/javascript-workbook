@@ -26,7 +26,7 @@ var int = console.log(parseInt(str))
 //use the typeOf method on the variable
 
 var dataType = `words words words`
-var result = console.log(typeof(dataType)))
+var result = console.log(typeof(dataType))
 
 //Create two var that can be a string or number, the string must contain a number though
 //Create a function with the two var
