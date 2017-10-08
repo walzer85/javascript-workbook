@@ -6,7 +6,7 @@
 //use var today with toTimeString method
 
 var today = new Date();
-var readable = console.log(today.toString());
+var readable = today.toString();
 
 //create a var to convert.
 //input a number into var convert
