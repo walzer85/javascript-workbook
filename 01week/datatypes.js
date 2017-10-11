@@ -12,33 +12,35 @@ var readable = today.toString();
 //input a number into var convert
 //use convert and toString() method to make the number a string
 
-var num = 13
-var n = console.log(num.toString)
+const num = 13
+const n = console.log(num.toString)
 
 //set var to a string
 //use parseInt() method
 
-var str = `15 Years`
-var int = console.log(parseInt(str))
+const str = `15 Years`
+const int = console.log(parseInt(str))
 
 //tells what type of datatype your input is
 //create a variable of any main datatype
 //use the typeOf method on the variable
 
-var dataType = `words words words`
-var result = console.log(typeof(dataType))
+const dataType = `words words words`
+const result = console.log(typeof(dataType))
 
 //Create two var that can be a string or number, the string must contain a number though
 //Create a function with the two var
 //Inside the function, add the two var together
 //Use parseInt() to take the number out of the string
 
-var numOne = `13`
-var numTwo = `17`
+const numOne = `13`
+const numTwo = `17`
 
-function add(numOne, numTwo) {
+function add() {
   return parseInt(numOne) + parseInt(numTwo)
 }
+
+add();
 
 //write a function that returns a true if two var are truthy
 //if both var are true, show "nope"
@@ -46,20 +48,25 @@ function add(numOne, numTwo) {
 // if one is false and one is true, show "yep!"
 
 function truest(thingOne, thingTwo) {
-    if (thingOne && thingTwo === `true`){
+    if ((thingOne === true && thingTwo === true) || (thingOne === false && thingTwo === false)){
     return `nope`
-  } else if (thingOne && thingTwo === `false`) {
-    return 'nope'
   } else {
     return 'yep!'
   }
 };
 
+truest();
+
 //write a function that only runs when both var are false
 //if both var are false, show a confirmation message
 
-function womp(dumb, dumber) {
-  if (dumb && dumber === `false`) {
+const dumb = dfs
+const dumber = aadsadfdfds
+
+function womp() {
+  if (dumb === false && dumber === false) {
     return `yes, they're both false`
   }
 };
+
+womp()
