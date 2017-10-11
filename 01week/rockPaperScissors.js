@@ -9,10 +9,22 @@ const rl = readline.createInterface({
 
 
 function rockPaperScissors(hand1, hand2) {
-
-  // Write code here
-
-}
+  // check for a tie, if it is a tie, return tie, if not check for win
+  // rock beats scissors, scissors beats paper, paper beats rock
+  //to find who won, compare hand1 to hand2
+  const handOne = 'Hand one wins!'
+  const handTwo = 'Hand two wins!'
+  
+  if(hand1 === hand2) {
+    return "It's a tie!";
+  } else if (hand1 === 'rock'){
+    return   hand2 === 'paper' ? handTwo : handOne;
+  } else if (hand1 === 'paper') {
+    return hand2 === 'scissors' ? handTwo : handOne;
+  } else if (hand1 === 'scissors') {
+    return hand2 === 'rock' ? handTwo : handOne;
+  }
+};
 
 function getPrompt() {
   rl.question('hand1: ', (answer1) => {
