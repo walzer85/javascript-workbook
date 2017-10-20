@@ -20,9 +20,10 @@ const rl = readline.createInterface({
 });
 
 
-const pigLatinr=(word)=> {
-  const lowerCase = word.toLowerCase().trim()
-  
+const pigLatin=(word)=> {
+  word.toLowerCase().trim();
+  const arrVowels = ['a', 'e', 'i', 'o', 'u']
+  for (let arrVowels = )
   //checkFirstVowel goes here!!!
   word.split(``);
   word.push(`ay`);
