@@ -23,11 +23,11 @@ const rl = readline.createInterface({
 const pigLatin=(word)=> {
   word.toLowerCase().trim();
   word.split(``);
-
+  //slice, indexOf, concat
   //checkFirstVowel goes here!!!
-  const searchVowel=(arrVowels)=> {
-    return arrVowels === ['a', 'e', 'i', 'o', 'u']
-  }
+  let firstVowel;
+  const vowel = ['a', 'e', 'i', 'o', 'u']
+  vowel.forEach=()=>
   word.copyWithin(searchVowel[0], );
   //moveToEnd(), move consonants before the first vowel to the end of the word,
   word.push(`ay`);
