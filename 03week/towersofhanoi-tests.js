@@ -8,12 +8,13 @@
 if (typeof describe === 'function') {
 
 //TEST 1
-//it should be able to move a block, if I ran towersOfHanoi('a', 'b', 'c'), the stacks would look like
+//it should be able to move a block, if I ran towersOfHanoi('a', 'c'), the stacks would look like
   //{a: [4,3], b: [1], c:[2]}
 
   describe('#towersOfHanoi()', () => {
     it('should move a block', () => {
-      assert.deepEqual(stacks, {a: [4,3], b: [1], c:[2]});
+      towersOfHanoi('a', 'c');
+      assert.deepEqual(stacks, {a: [4,3, 2], b: [0], c:[1]});
     });
 
 //TEST 2
@@ -22,6 +23,7 @@ if (typeof describe === 'function') {
 
   describe('#towersOfHanoi()', () => {
     it('should move a block', () => {
+      towersOfHanoi('a', 'b', 'c');
       assert.deepEqual(stacks, {a: [4,3], b: [], c:[2, 1]});
     });
 
