@@ -7,7 +7,7 @@
 //function names, purpose, method
   //convert your word to lower case, toLowerCase method
   //get rid of any empty space, trim method, chained to toLowerCase
-  //
+  //vowelIndex(), use this inside of a forEach method to find the index of the vowels in the word, indexOf method
 
 const assert = require('assert');
 const readline = require('readline');
@@ -20,7 +20,10 @@ const rl = readline.createInterface({
 const pigLatin=(word)=> {
   word.toLowerCase().trim();
   const vowel = ['a', 'e', 'i', 'o', 'u']
-  vowels.forEach(indexOf(word){
+  const vowelIndex =(word)=>{
+    return word.indexOf();
+  }
+  vowels.forEach(vowelIndex(word){
 
   });
   //slice, indexOf, concat
