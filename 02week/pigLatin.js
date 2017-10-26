@@ -5,12 +5,9 @@
   //const vowels = ('aeiou')
 
 //function names, purpose, method
-  //checkFirstVowel(), use a for loop to look for where the first vowel is in the array, indexOf method
-  //strToArray(), convert the word you used into an array, split method, split on first vowel index
-  //moveToEnd(), move all array elements before the first vowel to the end, use push and shift method with value returned from indexOf
-  //addAY(), add the letters a and y to the end of the array, push method
-  //arrayToStr(), convert the array back into a string, join method
-  //print out result
+  //convert your word to lower case, toLowerCase method
+  //get rid of any empty space, trim method, chained to toLowerCase
+  //
 
 const assert = require('assert');
 const readline = require('readline');
@@ -22,11 +19,13 @@ const rl = readline.createInterface({
 
 const pigLatin=(word)=> {
   word.toLowerCase().trim();
-  word.split(``);
+  const vowel = ['a', 'e', 'i', 'o', 'u']
+  vowels.forEach(indexOf(word){
+
+  });
   //slice, indexOf, concat
   //checkFirstVowel goes here!!!
   let firstVowel;
-  const vowel = ['a', 'e', 'i', 'o', 'u']
   vowel.forEach=()=>
   word.copyWithin(searchVowel[0], );
   //moveToEnd(), move consonants before the first vowel to the end of the word,
