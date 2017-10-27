@@ -20,5 +20,10 @@ const personalInfo = {
 
 //create a for...in loop that prints out the contents of personalInfo
 for (const prop in personalInfo) {
-  console.log(`personalInfo.${prop} = ${personalInfo[prop]}`);
+  console.log(`${prop} = ${personalInfo[prop]}`);
+}
+
+//use the same personalInfo in a for...in loop to show only birthDate
+for (const prop in personalInfo) {
+  console.log(`${birthDate} = ${personalInfo[birthDate]}`);
 }
