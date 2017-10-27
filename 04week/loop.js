@@ -1,10 +1,10 @@
 'use strict'
 
 //create a variable with several car makers
-const carsInReverse ['toyota', 'honda', 'chevrolet', 'puegot']
+const carsInReverse['toyota', 'honda', 'chevrolet', 'puegot']
 
 //using forEach, console log the items inside the array carsInReverse
-carsInReverse.forEach((item)=>{
+carsInReverse.forEach((item) => {
   console.log(item);
 });
 
@@ -26,4 +26,13 @@ for (const prop in personalInfo) {
 //use the same personalInfo in a for...in loop to show only birthDate
 for (const prop in personalInfo) {
   console.log(`${birthDate} = ${personalInfo[birthDate]}`);
+}
+
+//create a variable that is assigned a number value of zero
+let numBeginning = 1;
+
+//I want to print every number between 1 and 1000 using a while loop
+while (numBeginning <= 1000) {
+  console.log(numBeginning);
+  numBeginning ++;
 }
