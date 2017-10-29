@@ -61,11 +61,14 @@ function ticTacToe(row, column) {
   //ticTacToe(), begin the game with player X
   print(row, column)
   //playerXTurn(), set playerTurn to 'X' - place an X in the column/row that player X chooses, splice method on var board
+  checkForWin
   let playerTurn = 'O';
   //playerOTurn(), change playerTurn to 'O' - switch to player O, place an O in the column/row that player O chooses, splice method on var board
   //switch back to player X, run the same code again
+  checkForWin
   let playerTurn = 'X';
   //Between every turn, run checkForWin
+  checkForWin;
 }
 
 function getPrompt() {
