@@ -19,13 +19,13 @@ const rl = readline.createInterface({
 
 const pigLatin=(word)=> {
   word.toLowerCase().trim();
+  const wordArr=word.split();
   const vowel = ['a', 'e', 'i', 'o', 'u']
-  const vowelIndex =(word)=>{
-    return word.indexOf();
+  wordArr.forEach((letter, i) => {
+  if(vowel.indexOf(letter)!==-1){
+    return vowel;
   }
-  vowels.forEach(vowelIndex(word){
-
-  });
+});
   //slice, indexOf, concat
   //checkFirstVowel goes here!!!
   let firstVowel;
