@@ -20,17 +20,22 @@ function printStacks() {
 }
 
 function movePiece() {
-  // Your code here
+    endStack.push(startstack.lastindexof)
+    startstack.lastindexof.slice
+  }
 
-}
-
-function isLegal() {
-  // Your code here
-
+const isLegal=()=> {
+  if(startstack.lastindexof > endStack.lastindexof) {
+    movePiece
+  } else {
+    return 'Not a legal move.';
+  }
 }
 
 function checkForWin() {
-  // Your code here
+  if (stacks === [a: [], b: [1], c:[4, 3, 2, 1]]) {
+    return 
+  }
 
 }
 
@@ -50,5 +55,3 @@ function getPrompt() {
 }
 
 getPrompt();
-
-
