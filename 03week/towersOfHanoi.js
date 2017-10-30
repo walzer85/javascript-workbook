@@ -19,12 +19,12 @@ function printStacks() {
   console.log("c: " + stacks.c);
 }
 
-function movePiece() {
+function movePiece(startstack, endStack) {
     endStack.push(startstack.lastindexof)
     startstack.lastindexof.slice
   }
 
-const isLegal=()=> {
+const isLegal=(startstack, endStack)=> {
   if(startstack.lastindexof > endStack.lastindexof) {
     movePiece
   } else {
@@ -34,14 +34,13 @@ const isLegal=()=> {
 
 function checkForWin() {
   if (stacks === [a: [], b: [1], c:[4, 3, 2, 1]]) {
-    return 
-  }
+    return "You win!  Let's play again!";
+  } else
 
 }
 
 function towersOfHanoi(startStack, endStack) {
-  // Your code here
-
+  moviePiece
 }
 
 function getPrompt() {
