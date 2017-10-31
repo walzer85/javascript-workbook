@@ -43,15 +43,15 @@ const isLegal=(startstack, endStack)=> {
   }
 }
 
-//checkForWin,
+//checkForWin, if all of the numbers are in the last stack, run the win sequence, which should reset the object, if statement
 const checkForWin=()=>
   if (stacks === [a: [], b: [1], c:[4, 3, 2, 1]]) {
-    return "You win!  Let's play again!";
-
-  } else
-
+    console.log("You win!  Let's play again!");
+    printBeginningStacks;
+    getPrompt;
+  }
 }
-
+towersOfHanoi, only needs to reference the isLegal function to get the
 function towersOfHanoi(startStack, endStack) {
   isLegal
 }
