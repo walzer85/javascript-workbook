@@ -13,9 +13,28 @@ let jobTypes = {
 //Make a class called CrewMember
 class CrewMember {
   constructor(name, job, specialSkill, ship){
-    
+    this.name = name;
+    this.job = job;
+    this.specialSkill = specialSkill;
+    this.ship = ship;
   }
 }
+
+//Make a class called Ship
+class Ship {
+  constructor(name, type, ability, crew) {
+    this.name = name;
+    this.type = type;
+    this.ability = ability;
+    this.crew = crew;
+  }
+}
+
+
+
+//Make a new CrewMember called crewMember1
+let crewMember1 = new CrewMember('Rick Martinez', 'pilot', 'chemistry');
+
 
 //tests
 if (typeof describe === 'function'){
