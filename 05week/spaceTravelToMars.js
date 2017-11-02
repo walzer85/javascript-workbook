@@ -30,10 +30,12 @@ class Ship {
   }
 }
 
-
-
 //Make a new CrewMember called crewMember1
 let crewMember1 = new CrewMember('Rick Martinez', 'pilot', 'chemistry');
+
+//Make a new Ship called "mav"
+let mav = new Ship('Mars Ascent Vehicle', 'MAV', 'Ascend into low orbit');
+
 
 
 //tests
