@@ -10,6 +10,12 @@ let jobTypes = {
 };
 
 // Your code here
+//Make a class called CrewMember
+class CrewMember {
+  constructor(name, job, specialSkill, ship){
+    
+  }
+}
 
 //tests
 if (typeof describe === 'function'){
