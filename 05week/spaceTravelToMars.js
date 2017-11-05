@@ -36,11 +36,11 @@ class Ship {
 
 //Make a new CrewMember called crewMember1
 let crewMember1 = new CrewMember('Rick Martinez', 'pilot', 'chemistry');
-
+let crewMember2 = new CrewMember('Commander Lewis', 'commander', 'geology')
 //Make a new Ship called "mav"
 let mav = new Ship('Mars Ascent Vehicle', 'MAV', 'Ascend into low orbit');
+let hermes = new Ship('Hermes', 'Main Ship', 'Interplanetary Space Travel');
 
-}
 //tests
 if (typeof describe === 'function'){
   describe('CrewMember', function(){
