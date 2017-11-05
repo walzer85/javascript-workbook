@@ -31,8 +31,18 @@ class Ship {
     this.type = type;
     this.ability = ability;
     this.crew = [];
+    }
+    let missionStatement=()=>
+    if ((ship = 'Mars Ascent Vehicle') || (ship === 'hermes')) && (crew.length === 0) {
+      return "Can't perform a mission yet."
+    }
+    if (((ship ==== 'Mars Ascent Vehicle') && (job === 'pilot')) {
+      return "Ascend into low orbit";
+    } else if ((ship === "hermes") && (job === 'commander')) {
+      return "Interplanetary Space Travel";
+    }
   }
-}
+
 
 //Make a new CrewMember called crewMember1
 let crewMember1 = new CrewMember('Rick Martinez', 'pilot', 'chemistry');
