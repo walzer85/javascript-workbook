@@ -25,7 +25,7 @@ function printBoard() {
 
 function horizontalWin() {
   //horizontalWin(), checks if there are three X's or O's in [0][0], [0][1], [0][2], etc, indexOf method
-  if (printBoard.indexOf(printBoard) === ((([0][0]) && [0][1] && [0][2]) || ([1][0] && [1][1] && [1][2]) || ([2][0] && [2][1] && [2][2])) {
+  if ((board[0][0].trim() && board[0][0] === board[0][1] && board[0][0] === board[0][2]) || (board[1][0].trim() && board[1][0] === board[1][1] && board[1][0] === board[1][2]) || (board[2][0].trim() && board[2][0] === board[2][1] && board[2][0] === board[2][2])) {
     return 'You Win!';
   } else {
     const getPrompt;
@@ -34,7 +34,7 @@ function horizontalWin() {
 
 function verticalWin() {
   //verticalWin(), checks if there are th ree X's or O'ss in [0][0], [1][0], [2][0]; [0][1], [1][1], [2][1]; [0][2], [1][2], [2][2]; indexOf method
-  if (printBoard.indexOf(printBoard) === ((([0][0]) && [1][0] && [2][0]) || ([0][1] && [1][1] && [2][1]) || ([0][2] && [1][2] && [2][2])) {
+  if (board[0][0].trim() && board[0][0] === board[1][0] && board[0][0] === board[2][0]) || (board[0][1].trim() && board[1][1] === board[1][1] && board[2][1] === board[0][2]) || (board[0][2].trim() && board[2][0] === board[2][1] && board[2][0] === board[2][2])) {
     return 'You Win!';
   } else {
     const getPrompt;
@@ -44,9 +44,7 @@ function verticalWin() {
 function diagonalWin() {
   //diagonalWin(), checks if there are three X's or O's in [0][0], [1][1], [2][2]; [0][2], [1][1], [2][0]; indexOf method
   if (printBoard.indexOf(printBoard) === ((([0][0]) && [1][1] && [2][2]) || ([0][2] && [1][1] && [2][0])) {
-    return 'You Win!';
-  } else {
-    const getPrompt;
+    return true;
   }
 }
 
@@ -59,7 +57,7 @@ function checkForWin() {
 
 function ticTacToe(row, column) {
   //ticTacToe(), begin the game with player X
-  const 
+  const
   console.log;(row, column)
   //playerXTurn(), set playerTurn to 'X' - place an X in the column/row that player X chooses, splice method on var board
   checkForWin();
