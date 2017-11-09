@@ -32,7 +32,17 @@ function map(arr, callback) {
 }
 
 function filter(arr, callback) {
-  // Your code here
+  //create an array with three numbers
+  const arrProblemThree = [1, 2, 3];
+
+  //longestWords(), create a function that takes an array and a function
+  //the called function affects the called array
+  //a new, empty array accepts the results of the function
+  const longestWords = (arrTwo, callbackTwo) => {
+    const arrResultThree = [];
+    if ()
+    }
+  }
 }
 
 function some(arr, callback) {
