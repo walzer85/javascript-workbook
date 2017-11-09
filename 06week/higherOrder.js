@@ -38,11 +38,11 @@ function filter(arr, callback) {
   //longestWords(), create a function that takes an array and a function
   //the called function affects the called array
   //a new, empty array accepts the results of the function
-  const longestWords = (arrTwo, callbackTwo) => {
+  const filtered = (arrTwo, callbackTwo) => {
     const arrResultThree = [];
-    if ()
+    if (callbackTwo(arrTwo[i])) arrResultThree.push(arrTwo[i])
     }
-  }
+    console.log(arrResultThree);
 }
 
 function some(arr, callback) {
