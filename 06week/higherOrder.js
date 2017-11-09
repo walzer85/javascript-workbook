@@ -3,11 +3,30 @@
 const assert = require('assert');
 
 function forEach(arr, callback) {
-  // Your code here
+  // create an array with whatever you want in it
+  const arrProblemOne = ['Eric', 'Eric', 'Eric', 'I promise I am not vain.  Seriously']
+
+  //make a for loop that runs the number of items in the array amount of times.
+  //make a variable that prints a phrase the amount of times defined by the for loop
+  for (let i = 0; i < arrProblemOne.length; i++) {
+    const printTheArrayLength = () => {
+      console.log('Over and over!');
+    }
+  }
 }
 
 function map(arr, callback) {
-  // Your code here
+  // Create an array, put whatever you want in it
+  const test = ['1', '2', '3', '4', '5', '6'];
+
+  //doThis(), a function that creates a new array, then for each item in the original array, and does
+  const doThis = (arr, callBackFunction) => {
+  const newArr = [];
+  arr.forEach((i) => {
+    newArr.push(callBackFunction(i));
+  });
+  return newArr;
+};
 }
 
 function filter(arr, callback) {
