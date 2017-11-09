@@ -19,13 +19,15 @@ function map(arr, callback) {
   // Create an array, put whatever you want in it
   const test = ['1', '2', '3', '4', '5', '6'];
 
-  //doThis(), a function that creates a new array, then for each item in the original array, and does
+  //doThis(), a function that creates a new array, then does whatever function you want when you call doThis to the original array
+  //pushes the result of the called function to the new array
+  //print out the new array
   const doThis = (arr, callBackFunction) => {
   const newArr = [];
   arr.forEach((i) => {
     newArr.push(callBackFunction(i));
   });
-  return newArr;
+  console.log(newArr);
 };
 }
 
