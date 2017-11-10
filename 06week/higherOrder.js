@@ -4,13 +4,13 @@ const assert = require('assert');
 
 function forEach(arr, callback) {
   // create an array with whatever you want in it
-  const arrProblemOne = ['Eric', 'Eric', 'Eric', 'I promise I am not vain.  Seriously']
+  const arrProblemOne = [1, 2, 3]
 
   //make a for loop that runs the number of items in the array amount of times.
   //make a variable that prints a phrase the amount of times defined by the for loop
   for (let i = 0; i < arrProblemOne.length; i++) {
     const printTheArrayLength = () => {
-      console.log('Over and over!');
+      console.log(callback);
     }
   }
 }
