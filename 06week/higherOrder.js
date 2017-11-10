@@ -3,15 +3,45 @@
 const assert = require('assert');
 
 function forEach(arr, callback) {
-  // Your code here
+  // create an array with whatever you want in it
+  const arrProblemOne = [1, 2, 3]
+
+  //make a for loop that runs the number of items in the array amount of times.
+  //make a variable that prints a phrase the amount of times defined by the for loop
+  for (let i = 0; i < arrProblemOne.length; i++) {
+      callback();
+    }
+  }
 }
 
 function map(arr, callback) {
-  // Your code here
+  // Create an array, put whatever you want in it
+  const test = ['1', '2', '3', '4', '5', '6'];
+
+  //doThis(), a function that creates a new array, then does whatever function you want when you call doThis to the original array
+  //pushes the result of the called function to the new array
+  //print out the new array
+  const doThis = (arr, callBackFunction) => {
+  const newArr = [];
+  test.forEach((i) => {
+    newArr.push(callBackFunction(i));
+  });
+  console.log(newArr);
+};
 }
 
 function filter(arr, callback) {
-  // Your code here
+  //create an array with three numbers
+  const arrProblemThree = [1, 2, 3];
+
+  //longestWords(), create a function that takes an array and a function
+  //the called function affects the called array
+  //a new, empty array accepts the results of the function
+  const filtered = (arrTwo, callbackTwo) => {
+    const arrResultThree = [];
+    if (callbackTwo(arrTwo[i])) arrResultThree.push(arrTwo[i])
+    }
+    console.log(arrResultThree);
 }
 
 function some(arr, callback) {
