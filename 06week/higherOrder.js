@@ -23,7 +23,7 @@ function map(arr, callback) {
   //print out the new array
   const doThis = (arr, callBackFunction) => {
   const newArr = [];
-  arr.forEach((i) => {
+  test.forEach((i) => {
     newArr.push(callBackFunction(i));
   });
   console.log(newArr);
