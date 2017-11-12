@@ -37,7 +37,7 @@
 //             "customer": {
 //                 "id": 4,
 //                 "customerName":"Martin Luther King",
-//                 "customerCity":"Burmingham",
+//                 "customerCity":"Birmingham",
 //                 "customerState":"AL",
 //                 "product":"Sandwiches",
 //                 "productPrice": 7.99
@@ -45,9 +45,10 @@
 //         },
 // ];
 
-Class Customer {
+//Create a new class called customer.  it is made out of an id number, a name, city, state, product, and price.  Include a statement that prints out the sentence required for the assignment
+class Customer {
   constructor(id, customerName, customerCity, customerState, product, productPrice){
-    this.id = id,
+    this.id = id;
     this.customerName = customerName;
     this.customerCity = customerCity;
     this.customerState = customerState;
@@ -55,8 +56,18 @@ Class Customer {
     this.productPrice = productPrice;
   }
   statement(){
-    console.log(this.customerName + ' paid ' + this.productPrice + ' for ' + this.product + ' in ' + this.customerCity + ', ' + this.customerState + '.');
+    return this.customerName + ' paid ' + this.productPrice + ' for ' + this.product + ' in ' + this.customerCity + ', ' + this.customerState + '.';
   }
-};
+}
 
-let marilyn = new Customer (1, 'Marilyn Monroe', 'New York City')
+//make new instances of Customer.  Use the keys and values listed in the assignment
+let marilyn = new Customer(1, 'Marilyn Monroe', 'New York City', 'NY', 'Yellow Chair', '19.99');
+let abe = new Customer(2, 'Abraham Lincoln', 'Boston', 'MA', 'Tickets', 27.00);
+let john = new Customer(3, 'John F. Kennedy', 'Dallas', 'TX', 'Mustang Convertible', 2499.99);
+let martin = new Customer(4, 'Martin Luther King', 'Birmingham', 'AL', 'Sandwiches', 7.99);
+
+//console log the statements from Customer
+console.log(marilyn.statement());
+console.log(abe.statement());
+console.log(john.statement());
+console.log(martin.statement());
