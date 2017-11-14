@@ -24,11 +24,10 @@ function printBoard() {
 }
 
 function horizontalWin() {
-  //horizontalWin(), checks if there are three X's or O's in [0][0], [0][1], [0][2], etc, indexOf method
-  if ((board[0][0].trim() && board[0][0] === board[0][1] && board[0][0] === board[0][2]) || (board[1][0].trim() && board[1][0] === board[1][1] && board[1][0] === board[1][2]) || (board[2][0].trim() && board[2][0] === board[2][1] && board[2][0] === board[2][2])) {
-    return 'You Win!';
-  } else {
-    const getPrompt;
+  //Checks for horizontalWin, joins each array into a string
+  //check each array in board by forEaching through them
+  board.foreach.join('') === 'XXX' || 'OOO' {
+    console.log(`player`)
   }
 }
 
