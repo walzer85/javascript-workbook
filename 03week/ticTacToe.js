@@ -26,8 +26,9 @@ function printBoard() {
 function horizontalWin() {
   //Checks for horizontalWin, joins each array into a string
   //check each array in board by forEaching through them
+  //if the array equals a string of three Xs or Os 
   board.foreach.join('') === 'XXX' || 'OOO' {
-    console.log(`player`)
+    console.log(`You win!`)
   }
 }
 
