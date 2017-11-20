@@ -15,7 +15,7 @@ let board = [
 let playerTurn = 'X';
 
 function printBoard() {
-  console.log('   0  1  2');
+  console.log('\n   0  1  2');
   console.log('0 ' + board[0].join(' | '));
   console.log('  ---------');
   console.log('1 ' + board[1].join(' | '));
@@ -23,56 +23,75 @@ function printBoard() {
   console.log('2 ' + board[2].join(' | '));
 }
 
+
+//Check for horizontal win
 function horizontalWin() {
-  //Checks for horizontalWin, joins each array into a string
-  //check each array in board by forEaching through them
-  //if the array equals a string of three Xs or Os 
-  board.foreach.join('') === 'XXX' || 'OOO' {
-    console.log(`You win!`)
+  for (var i = 0; i < 3; i++) {
+    if (board[i].join('') === 'XXX' || board[i].join('') === 'OOO') {
+      console.log(`Player ${board[i][0]} wins!`);
+      return true;
+    }
   }
 }
 
+//Check for vertical win
 function verticalWin() {
-  //verticalWin(), checks if there are th ree X's or O'ss in [0][0], [1][0], [2][0]; [0][1], [1][1], [2][1]; [0][2], [1][2], [2][2]; indexOf method
-  if (board[0][0].trim() && board[0][0] === board[1][0] && board[0][0] === board[2][0]) || (board[0][1].trim() && board[1][1] === board[1][1] && board[2][1] === board[0][2]) || (board[0][2].trim() && board[2][0] === board[2][1] && board[2][0] === board[2][2])) {
-    return 'You Win!';
-  } else {
-    const getPrompt;
+  let vertCheck;
+  for (var i = 0; i < 3; i++) {
+    //Reset vertCheck to blank
+    vertCheck = '';
+    for (var x = 0; x < 3; x++) {
+      vertCheck = vertCheck + board[x][i];
+    }
+    if (vertCheck === 'XXX' || vertCheck === 'OOO') {
+      console.log(`\nPlayer ${vertCheck.charAt(0)} wins!`);
+      return true;
+    }
   }
 }
 
+//Check for diagonal win
 function diagonalWin() {
-  //diagonalWin(), checks if there are three X's or O's in [0][0], [1][1], [2][2]; [0][2], [1][1], [2][0]; indexOf method
-  if (printBoard.indexOf(printBoard) === ((([0][0]) && [1][1] && [2][2]) || ([0][2] && [1][1] && [2][0])) {
+  //Set upLeft = to string of upper left to lower right
+  let upLeft = board[0][0] + board[1][1] + board[2][2];
+  //Set upRight = to string of upper right to lower left
+  let upRight = board[0][2] + board[1][1] + board[2][0];
+  //Check if upLeft or upRight are xxx or OOO
+  if (
+    upLeft === 'XXX' || upLeft === 'OOO' ||
+    upRight === 'XXX' || upRight === 'OOO'
+  ) {
+    //Log player win
+    console.log(`\nPlayer ${board[1][1]} wins!`);
     return true;
   }
 }
 
+//Runs all directional win checks
 function checkForWin() {
-  //checkForWin(), check if horizontalWin, verticalWin, diagonalWin have three of the same values, if else statements
-  if (diagonalWin || verticalWin || horizontalWin) {
-    return 'Play again?';
+  if (
+    horizontalWin() === true ||
+    verticalWin() === true ||
+    diagonalWin() === true
+  ) {
+    return true;
   }
 }
 
+//Main TTT function
 function ticTacToe(row, column) {
-  //ticTacToe(), begin the game with player X
-  const
-  console.log;(row, column)
-  //playerXTurn(), set playerTurn to 'X' - place an X in the column/row that player X chooses, splice method on var board
-  checkForWin();
-  playerTurn = 'O';
-  //playerOTurn(), change playerTurn to 'O' - switch to player O, place an O in the column/row that player O chooses, splice method on var board
-  //switch back to player X, run the same code again
-  checkForWin();
-  playerTurn = 'X';
-  //Between every turn, run checkForWin
-  checkForWin;
+  if (board[row][column] === ' ') {
+    board[row][column] = playerTurn;
+    playerTurn = (playerTurn==='X'?'O':'X');
+    checkForWin();
+  } else {
+    console.log('\nInvalid location!');
+  }
 }
 
 function getPrompt() {
   printBoard();
-  console.log("It's Player " + playerTurn + "'s turn.");
+  console.log("\nIt's player " + playerTurn + "'s turn.");
   rl.question('row: ', (row) => {
     rl.question('column: ', (column) => {
       ticTacToe(row, column);
