@@ -26,6 +26,9 @@ function printBoard() {
 
 //Check for horizontal win
 function horizontalWin() {
+  //loop through each row of the board and check if they have three Xs or Os.
+  //wanted to use forEach but couldn't figure out how to console log the correct winner
+  //console.log which player won
   for (var i = 0; i < 3; i++) {
     if (board[i].join('') === 'XXX' || board[i].join('') === 'OOO') {
       console.log(`Player ${board[i][0]} wins!`);
@@ -36,6 +39,8 @@ function horizontalWin() {
 
 //Check for vertical win
 function verticalWin() {
+  //create a variable vertCheck
+  //
   let vertCheck;
   for (var i = 0; i < 3; i++) {
     //Reset vertCheck to blank
@@ -44,7 +49,7 @@ function verticalWin() {
       vertCheck = vertCheck + board[x][i];
     }
     if (vertCheck === 'XXX' || vertCheck === 'OOO') {
-      console.log(`\nPlayer ${vertCheck.charAt(0)} wins!`);
+      console.log(`Player ${vertCheck.charAt(0)} wins!`);
       return true;
     }
   }
@@ -52,23 +57,22 @@ function verticalWin() {
 
 //Check for diagonal win
 function diagonalWin() {
+  //
   //Set upLeft = to string of upper left to lower right
   let upLeft = board[0][0] + board[1][1] + board[2][2];
   //Set upRight = to string of upper right to lower left
   let upRight = board[0][2] + board[1][1] + board[2][0];
   //Check if upLeft or upRight are xxx or OOO
-  if (
-    upLeft === 'XXX' || upLeft === 'OOO' ||
-    upRight === 'XXX' || upRight === 'OOO'
-  ) {
-    //Log player win
-    console.log(`\nPlayer ${board[1][1]} wins!`);
-    return true;
+  if (upLeft === 'XXX' || upLeft === 'OOO' ||upRight === 'XXX' || upRight === 'OOO') {
+      console.log(`\nPlayer ${board[1][1]} wins!`);
+      return true;
   }
 }
 
-//Runs all directional win checks
+
 function checkForWin() {
+  //checkForWin checks if any of the other win states are true
+  //if any of them are true, returns true
   if (
     horizontalWin() === true ||
     verticalWin() === true ||
@@ -77,6 +81,18 @@ function checkForWin() {
     return true;
   }
 }
+
+function isLegal(row, column) {
+  //isLegal checks if row and column equal X or O
+  //if row or column !=== X or 0, rerun getPrompt
+  //if row or column does ==== X or O, return true
+  if (((row === 0) || (row === 1) || (row === 2)) && ((column === 0) || (column === 1) || (column === 2))) {
+    true;
+  } else if (((row !== 0) || (row !== 1) || (row !== 2)) && ((column !== 0) || (column !== 1) || (column !== 2))) {
+    console.log('Please chose either 0, 1, or 2.')
+    return getPrompt();
+  }
+};
 
 //Main TTT function
 function ticTacToe(row, column) {
@@ -94,8 +110,10 @@ function getPrompt() {
   console.log("\nIt's player " + playerTurn + "'s turn.");
   rl.question('row: ', (row) => {
     rl.question('column: ', (column) => {
+      if (isLegal(row, column) === true) {
       ticTacToe(row, column);
       getPrompt();
+      }
     });
   });
 
