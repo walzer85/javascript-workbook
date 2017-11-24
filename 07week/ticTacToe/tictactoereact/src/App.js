@@ -1,35 +1,47 @@
 import React, { Component } from 'react';
+// eslint-disable-next-line
 import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
   state = {
     playerTurn: 'X',
-    grid: {}
+    grid: {},
+    board: [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8]
+    ]
   };
 
   handleClickEvent(cell) {
     console.log(cell);
-  }
+    if(!this.state.grid(cell)) {
+      const newGrid = {...this.state.grid};
+      newGrid[cell] = this.state.playerTurn;
+      const playerTurn = this.state.playerTurn === 'X' ? 'O' : 'X';
+      this.setState({grid: newGrid, playerTurn})
+    }
+  };
+
+  renderBoard() {
+    return this.state.board.map((row, key) => {
+      console.log(row);
+      return (
+        <div className='row' key={key}>
+          {row.map((num, index) => {
+              return <div key='index' className='playBox' onClick={() => this.handleClickEvent(num)}>{this.state.grid[num]}</div>
+          })}
+        </div>
+      )
+    })
+  };
 
   render() {
+      this.renderBoard();
       return (
         <div>
-          <div className='row'>
-            <div data-cell='0'></div>
-            <div data-cell='1'></div>
-            <div data-cell='2'></div>
-          </div>
-          <div className='row'>
-            <div data-cell='3'></div>
-            <div data-cell='4'></div>
-            <div data-cell='5'></div>
-          </div>
-          <div className='row'>
-            <div data-cell='6'></div>
-            <div data-cell='7'></div>
-            <div data-cell='8'></div>
-          </div>
+          {this.renderBoard()}
         </div>
       );
   }
