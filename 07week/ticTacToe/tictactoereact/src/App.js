@@ -3,6 +3,15 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  state = {
+    playerTurn: 'X',
+    grid: {}
+  };
+
+  handleClickEvent(cell) {
+    console.log(cell);
+  }
+
   render() {
       return (
         <div>
