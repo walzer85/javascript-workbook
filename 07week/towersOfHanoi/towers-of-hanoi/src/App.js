@@ -48,7 +48,7 @@ class App extends Component {
 
   checkForWin(stack){
     console.log(stack);
-    
+
   }
 
   renderStacks() {
@@ -64,7 +64,7 @@ class App extends Component {
       </div>
       );
     }
-  };
+  }
 };
 
 export default App;
