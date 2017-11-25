@@ -48,7 +48,12 @@ class App extends Component {
 
   checkForWin(stack){
     console.log(stack);
-
+    //needs to check if stack c has 4, 3, 2, 1 in that order
+    //check the length of state.stacks.c - 1
+    //if the length - 1 is 3, say the player won
+    if (this.state.stacks.c.length -1 === 3) {
+      return
+    }
   }
 
   renderStacks() {
