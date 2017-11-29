@@ -15,12 +15,14 @@ class App extends Component {
       2: 'Yellow',
       1: 'Purple'
     }
+    startStack: null,
+    error: '',
   };
 
   isLegal(endStack){
     const endValue = this.state.stacks[endStack][this.state.stacks[endStack].length - 1];
     console.log(this.state.stacks[endStack][this.state.stacks[endStack].length - 1]);
-    const startValue = this.state.startStack
+    const startValue = this.state.stacks[this.state.startStack][this.state.stacks[this.state.startStack].length-1]
 
     return !endValue || endValue > startValue
 
