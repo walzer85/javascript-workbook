@@ -4,6 +4,13 @@ import './App.css';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import TextField from 'material-ui/TextField';
+import IconButton from 'material-ui/IconButton';
+import IconMenu from 'material-ui/IconMenu';
+import MenuItem from 'material-ui/MenuItem';
+import FlatButton from 'material-ui/FlatButton';
+import Toggle from 'material-ui/Toggle';
+import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
+import NavigationClose from 'material-ui/svg-icons/navigation/close';
 
 //would like to accept inputs of a name, the instrument they play, and how many years they've played it
 //would like to print out the values a user as entered
@@ -18,7 +25,9 @@ class Personal extends Component {
 
   handleChange(e) {
     this.setState({
-      value: e.target.value,
+      name: e.target.name,
+      instrument : e.target.instrument,
+      yearsPlayed: e.target.yearsPlayed
     });
   };
 
@@ -28,6 +37,21 @@ class Personal extends Component {
     return (
       <div className="App">
         <MuiThemeProvider>
+        <AppBar
+          title="Let's Make a Band!!"
+          iconClassNameRight="muidocs-icon-navigation-expand-more">
+          <IconMenu
+             iconButtonElement={
+               <IconButton><MoreVertIcon /></IconButton>
+             }
+             targetOrigin={{horizontal: 'right', vertical: 'top'}}
+             anchorOrigin={{horizontal: 'right', vertical: 'top'}}
+           >
+             <MenuItem primaryText="Refresh" />
+             <MenuItem primaryText="Help" />
+             <MenuItem primaryText="Sign out" />
+           </IconMenu>
+         </AppBar>
         <TextField
         value={this.state.name}
         floatingLabelText="What is your name?"
