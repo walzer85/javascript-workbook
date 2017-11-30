@@ -51,9 +51,9 @@ class Personal extends Component {
              targetOrigin={{horizontal: 'right', vertical: 'top'}}
              anchorOrigin={{horizontal: 'right', vertical: 'top'}}
            >
-             <MenuItem primaryText="Refresh" />
-             <MenuItem primaryText="Help" />
-             <MenuItem primaryText="Sign out" />
+             <MenuItem primaryText="Our Band" />
+             <MenuItem primaryText="Setups" />
+             <MenuItem primaryText="Hear Some Bands" />
            </IconMenu>
          </AppBar>
         <TextField
