@@ -1,6 +1,6 @@
 import React from 'react';
 
-const hearBands = () => {
+const HearBands = () => {
     return (
         <div>
 
