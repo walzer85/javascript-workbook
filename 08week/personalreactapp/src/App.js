@@ -17,13 +17,17 @@ import NavigationClose from 'material-ui/svg-icons/navigation/close';
 //would like to classify by instrument
 
 class Personal extends Component {
-  state = {
-    name: '',
-    instrument: '',
-    yearsPlayed: '',
-  }
+  constructor(props) {
+    super(props);
 
-  handleChange(e) {
+      this.state = {
+      name: '',
+      instrument: '',
+      yearsPlayed: '',
+    }
+  };
+
+  handleChange = (e) => {
     this.setState({
       name: e.target.name,
       instrument : e.target.instrument,
