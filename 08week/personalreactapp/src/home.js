@@ -12,6 +12,10 @@ import Toggle from 'material-ui/Toggle';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
 
+//would like to accept inputs of a name, the instrument they play, and how many years they've played it
+//would like to print out the values a user as entered
+//would like to classify by instrument
+
 class OurBand extends Component {
   constructor(props) {
     super(props);
