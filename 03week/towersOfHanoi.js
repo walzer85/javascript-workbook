@@ -28,10 +28,10 @@ const printBeginningStacks=(stacks)=> {}
     b: [],
     c: []
   };
+
 //movePiece(), Moves the last index of the startStack to the last index of the endStack, lastindexof method
 const movePiece=(startstack, endStack)=> {
     endStack.push(startstack.lastindexof)
-    startstack.lastindexof.slice
   }
 
 //isLegal(), checks to see if the last index of the start stack is less than the end stack last index.  If the value is less, run movePiece.  If the value is greater, deny the move, lastindexof method
