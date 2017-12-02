@@ -30,16 +30,22 @@ const printBeginningStacks=(stacks)=> {}
   };
 
 //movePiece(), Moves the last index of the startStack to the last index of the endStack, lastindexof method
-const movePiece=(startstack, endStack)=> {
+const movePiece=(startStack, endStack)=> {
     endStack.push(startstack.lastindexof)
   }
 
-//isLegal(), checks to see if the last index of the start stack is less than the end stack last index.  If the value is less, run movePiece.  If the value is greater, deny the move, lastindexof method
-const isLegal=(startstack, endStack)=> {
-  if((startstack.lastindexof < endStack.lastindexof) || (startstack.lastindexof > 0)) {
-    movePiece
-  } else {
+//isLegal(), checks to see if anything is in the first stack you choose.  It then checks if the ending stack is empty.  It then checks if the starting stack is smaller than the ending stack.  If it meets all of those the move is legal
+const isLegal = (startStack, endStack) => {
+  if (stacks[startStack].length === 0) {
+    console.log ('Please choose a stack with items in it! This move isn\'t legal!')
+    return false;
+  } else if( stacks[endStack].length === 0) {
+    return true;
+  } else if ((stacks[startStack].length - 1) > (stacks[endStack].length - 1)){
     return 'Not a legal move.';
+    return false;
+  } else {
+    return true;
   }
 }
 
