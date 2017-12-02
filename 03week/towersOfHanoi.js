@@ -7,36 +7,69 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
+//This is the initial setting at the beginning of towersOfHanoi.  Part of premade code
 let stacks = {
   a: [4, 3, 2, 1],
   b: [],
   c: []
 };
 
-function printStacks() {
+//This function prints the stacks on to the screen.  Part of premade code
+let printStacks = () => {
   console.log("a: " + stacks.a);
   console.log("b: " + stacks.b);
   console.log("c: " + stacks.c);
 }
 
-function movePiece() {
-  // Your code here
-
+//printBeginningStacks, reset the var stacks to its original position, nest stacks inside
+const printBeginningStacks = (stacks) => {
+   stacks = {
+    a: [4, 3, 2, 1],
+    b: [],
+    c: []
+  }
+  console.log('I want to play again, so we will.')
 }
 
-function isLegal() {
-  // Your code here
-
+//movePiece(), Moves the last index of the startStack to the last index of the endStack, using pop and push
+//using push, add the last value in your starting stack (using pop) to the end of your ending stack
+const movePiece=(startStack, endStack)=> {
+  stacks[endStack].push(stacks[startStack].pop());
 }
 
-function checkForWin() {
-  // Your code here
-
+//isLegal(), checks to see if anything is in the first stack you choose.  It then checks if the ending stack is empty.  It then checks if the starting stack is smaller than the ending stack.  If it meets all of those the move is legal
+const isLegal = (startStack, endStack) => {
+  if (stacks[startStack].length === 0) {
+    console.log ('Please choose a stack with items in it! This move isn\'t legal!')
+    return false;
+  } else if( stacks[endStack].length === 0) {
+    return true;
+  } else if ((stacks[startStack].length - 1) > (stacks[endStack].length - 1)){
+    return 'Not a legal move.';
+    return false;
+  } else {
+    return true;
+  }
 }
 
-function towersOfHanoi(startStack, endStack) {
-  // Your code here
+//checkForWin, if all of the numbers are in the last stack, run the win sequence, which should reset the object, if statement
+const checkForWin = () => {
+  if (stacks.c.length === 4) {
+    console.log("You win!  Let's play again!");
+    printBeginningStacks(stacks);
+  } else {
+    console.log('Keep trying, you\'ll get there!')
+    return false;
+  }
+}
 
+//towersOfHanoi, only needs to reference the isLegal function to get the list of finctions running
+//if the move is legal, move the piece then check if you've won
+const towersOfHanoi = (startStack, endStack) => {
+  if (isLegal(startStack, endStack)) {
+    movePiece(startStack, endStack);
+    checkForWin();
+  }
 }
 
 function getPrompt() {
@@ -50,5 +83,3 @@ function getPrompt() {
 }
 
 getPrompt();
-
-
