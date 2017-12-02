@@ -29,10 +29,10 @@ const printBeginningStacks=(stacks)=> {}
     c: []
   };
 
-//movePiece(), Moves the last index of the startStack to the last index of the endStack, lastindexof method
+//movePiece(), Moves the last index of the startStack to the last index of the endStack, using pop and push
 const movePiece=(startStack, endStack)=> {
-    endStack.push(startstack.lastindexof)
-  }
+  stacks[endStack].push(stacks[startStack].pop());
+}
 
 //isLegal(), checks to see if anything is in the first stack you choose.  It then checks if the ending stack is empty.  It then checks if the starting stack is smaller than the ending stack.  If it meets all of those the move is legal
 const isLegal = (startStack, endStack) => {
@@ -62,7 +62,7 @@ const checkForWin = () => {
 //towersOfHanoi, only needs to reference the isLegal function to get the list of finctions running
 //if the move is legal, move the piece then check if you've won
 const towersOfHanoi = (startStack, endStack) => {
-  if (isLegal(startStack, endStack) {
+  if (isLegal(startStack, endStack)) {
     movePiece(startStack, endStack);
     checkForWin();
   }
