@@ -60,8 +60,11 @@ const checkForWin = () => {
 }
 
 //towersOfHanoi, only needs to reference the isLegal function to get the list of finctions running
-function towersOfHanoi(startStack, endStack) {
-  isLegal
+const towersOfHanoi = (startStack, endStack) => {
+  if (isLegal(startStack, endStack) {
+    movePiece(startStack, endStack);
+    checkForWin();
+  }
 }
 
 function getPrompt() {
