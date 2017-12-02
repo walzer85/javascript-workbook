@@ -56,6 +56,7 @@ const isLegal = (startStack, endStack) => {
 const checkForWin = () => {
   if (stacks.c.length === 4) {
     console.log("You win!  Let's play again!");
+    printBeginningStacks(stacks);
   } else {
     console.log('Keep trying, you\'ll get there!')
     return false;
