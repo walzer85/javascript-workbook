@@ -8,7 +8,7 @@ const rl = readline.createInterface({
 });
 
 //This is the initial setting at the beginning of towersOfHanoi.  Part of premade code
-let Stacks = {
+let stacks = {
   a: [4, 3, 2, 1],
   b: [],
   c: []
@@ -22,12 +22,14 @@ let printStacks = () => {
 }
 
 //printBeginningStacks, reset the var stacks to its original position, nest stacks inside
-const printBeginningStacks=(stacks)=> {}
-  let stacks = {
+const printBeginningStacks = (stacks) => {
+   stacks = {
     a: [4, 3, 2, 1],
     b: [],
     c: []
-  };
+  }
+  console.log('I want to play again, so we will.')
+}
 
 //movePiece(), Moves the last index of the startStack to the last index of the endStack, using pop and push
 //using push, add the last value in your starting stack (using pop) to the end of your ending stack
@@ -52,7 +54,7 @@ const isLegal = (startStack, endStack) => {
 
 //checkForWin, if all of the numbers are in the last stack, run the win sequence, which should reset the object, if statement
 const checkForWin = () => {
-  if (stacks.c.length === 3) {
+  if (stacks.c.length === 4) {
     console.log("You win!  Let's play again!");
   } else {
     console.log('Keep trying, you\'ll get there!')
