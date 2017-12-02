@@ -60,6 +60,7 @@ const checkForWin = () => {
 }
 
 //towersOfHanoi, only needs to reference the isLegal function to get the list of finctions running
+//if the move is legal, move the piece then check if you've won
 const towersOfHanoi = (startStack, endStack) => {
   if (isLegal(startStack, endStack) {
     movePiece(startStack, endStack);
