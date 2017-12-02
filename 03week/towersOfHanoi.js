@@ -30,6 +30,7 @@ const printBeginningStacks=(stacks)=> {}
   };
 
 //movePiece(), Moves the last index of the startStack to the last index of the endStack, using pop and push
+//using push, add the last value in your starting stack (using pop) to the end of your ending stack
 const movePiece=(startStack, endStack)=> {
   stacks[endStack].push(stacks[startStack].pop());
 }
@@ -51,7 +52,7 @@ const isLegal = (startStack, endStack) => {
 
 //checkForWin, if all of the numbers are in the last stack, run the win sequence, which should reset the object, if statement
 const checkForWin = () => {
-  if (stacks[c].length === 3) {
+  if (stacks.c.length === 3) {
     console.log("You win!  Let's play again!");
   } else {
     console.log('Keep trying, you\'ll get there!')
