@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+
   state = {
     stacks : {
       a: [4, 3, 2, 1],
@@ -19,7 +20,7 @@ class App extends Component {
     error: '',
   };
 
-  isLegal(endStack){
+  const isLegal = (endStack) => {
     const endValue = this.state.stacks[endStack][this.state.stacks[endStack].length - 1];
     console.log(this.state.stacks[endStack][this.state.stacks[endStack].length - 1]);
     const startValue = this.state.stacks[this.state.startStack][this.state.stacks[this.state.startStack].length-1]
@@ -34,14 +35,14 @@ class App extends Component {
     }
   };
 
-  movePuck (endStack) {
+  const movePuck = (endStack) => {
     const stacks = {...this.state.stacks};
     const valueToMove = stacks[this.state.startStack].pop();
     stacks[endStack].push(valueToMove)
     this.setState({stacks: stacks, startStack: null})
   }
 
-  handleStackClick(stack){
+  const handleStackClick = (stack) => {
     //if no startStack, assign startStack, else attempt to move last puck and clear startStack
     if(!this.state.startStack){
       this.setState({startStack: stack})
@@ -53,7 +54,7 @@ class App extends Component {
     }
   };
 
-  checkForWin(stack){
+  const checkForWin = (stack) => {
     console.log(stack);
     //needs to check if stack c has 4, 3, 2, 1 in that order
     //check the length of state.stacks.c - 1
@@ -63,7 +64,7 @@ class App extends Component {
     }
   }
 
-  renderStacks() {
+  const renderStacks = () => {
       return Object.keys(this.state.stacks).map((stack) => {
         return (
         <div style={{height: 300, width: 60, display: 'flex', alignItems: 'flex-end', margin: 30, border: '4px solid green'}} key={key}>
@@ -77,18 +78,7 @@ class App extends Component {
       );
     }
   }
+};
 
-  render() {
-    return (
-      <div>
-          <div style={{ display: 'flex'}}>
-            {this.renderStacks()}
-              <p>{this.state.startStack}</p>
-          </div>
-          <p>{this.state.error}</p>
 
-      </div>
-    );
-  }
-}
 export default App;
