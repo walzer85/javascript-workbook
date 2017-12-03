@@ -14,7 +14,7 @@ class App extends Component {
       3: 'Blue',
       2: 'Yellow',
       1: 'Purple'
-    }
+    },
     startStack: null,
     error: '',
   };
@@ -24,8 +24,14 @@ class App extends Component {
     console.log(this.state.stacks[endStack][this.state.stacks[endStack].length - 1]);
     const startValue = this.state.stacks[this.state.startStack][this.state.stacks[this.state.startStack].length-1]
 
-    return !endValue || endValue > startValue
-
+//the first if should check if there is anything in your starting stack
+//else if - there is nothing in the ending stack, its legal
+//else if - the ending stack has a larger value than the starting stack, its legal
+    if (!endValue || endValue > startValue) {
+      return true;
+    } else {
+      return false;
+    }
   };
 
   movePuck (endStack) {
@@ -36,7 +42,6 @@ class App extends Component {
   }
 
   handleStackClick(stack){
-    console.log(stack)
     //if no startStack, assign startStack, else attempt to move last puck and clear startStack
     if(!this.state.startStack){
       this.setState({startStack: stack})
