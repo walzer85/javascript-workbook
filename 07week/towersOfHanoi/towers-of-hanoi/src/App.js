@@ -77,6 +77,18 @@ class App extends Component {
       );
     }
   }
-};
 
+  render() {
+    return (
+      <div>
+          <div style={{ display: 'flex'}}>
+            {this.renderStacks()}
+              <p>{this.state.startStack}</p>
+          </div>
+          <p>{this.state.error}</p>
+
+      </div>
+    );
+  }
+}
 export default App;
