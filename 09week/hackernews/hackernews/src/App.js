@@ -3,6 +3,15 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+
+  componentDidMount(){
+    fetch('https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty').then((res) => {
+      res.json().then((storyIds) => {
+        console.log(storyIds);
+      });
+    });
+  }
+
   render() {
     return (
       <div className="App">
