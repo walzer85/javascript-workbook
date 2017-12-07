@@ -16,55 +16,74 @@ import {BrowserRouter as Router, Link, Match, Miss} from 'react-router-dom';
 //would like to print out the values a user as entered
 //would like to classify by instrument
 
-const home = () => {
+class OurBand extends Component {
+    constructor(props) {
+      super(props);
 
-};
+        this.state = {
+        name: '',
+        instrument: '',
+        yearsPlayed: '',
+      }
+    };
 
-const setup = () => {
+    handleChange = (e) => {
+      this.setState({
+        name: e.target.name,
+        instrument : e.target.instrument,
+        yearsPlayed: e.target.yearsPlayed
+      });
+    };
 
-};
+    const home = () => {
 
-const hearBands = () => {
+    };
 
-};
+    const setup = () => {
 
-class App extends React.Component {
-  return (
-    <div className="App">
-      <MuiThemeProvider>
-      <AppBar
-        title="Let's Make a Band!!"
-        iconClassNameRight="muidocs-icon-navigation-expand-more">
-        <IconMenu
-           iconButtonElement={
-             <IconButton><MoreVertIcon /></IconButton>
-           }
-           targetOrigin={{horizontal: 'right', vertical: 'top'}}
-           anchorOrigin={{horizontal: 'right', vertical: 'top'}}
-         >
-           <MenuItem primaryText="Our Band" />
-           <MenuItem primaryText="Setups" />
-           <MenuItem primaryText="Hear Some Bands" />
-         </IconMenu>
-       </AppBar>
-      <TextField
-      value={this.state.name}
-      floatingLabelText="What is your name?"
-      onChange={this.handleChange}
-    />
-    <TextField
-        value={this.state.instrument}
-        floatingLabelText="What instrument do you play?"
+    };
+
+    const hearBands = () => {
+
+    };
+
+  render() {
+    return (
+      <div className="App">
+        <MuiThemeProvider>
+        <AppBar
+          title="Let's Make a Band!!"
+          iconClassNameRight="muidocs-icon-navigation-expand-more">
+          <IconMenu
+             iconButtonElement={
+               <IconButton><MoreVertIcon /></IconButton>
+             }
+             targetOrigin={{horizontal: 'right', vertical: 'top'}}
+             anchorOrigin={{horizontal: 'right', vertical: 'top'}}
+           >
+             <MenuItem primaryText="Our Band" />
+             <MenuItem primaryText="Setups" />
+             <MenuItem primaryText="Hear Some Bands" />
+           </IconMenu>
+         </AppBar>
+        <TextField
+        value={this.state.name}
+        floatingLabelText="What is your name?"
         onChange={this.handleChange}
-    />
-    <TextField
-      value={this.state.yearsPlayed}
-      floatingLabelText="How long have you played it?"
-      onChange={this.handleChange}
-    />
-    </MuiThemeProvider>
-    </div>
-  );
+      />
+      <TextField
+          value={this.state.instrument}
+          floatingLabelText="What instrument do you play?"
+          onChange={this.handleChange}
+      />
+      <TextField
+        value={this.state.yearsPlayed}
+        floatingLabelText="How long have you played it?"
+        onChange={this.handleChange}
+      />
+      </MuiThemeProvider>
+      </div>
+    );
   }
 }
 
