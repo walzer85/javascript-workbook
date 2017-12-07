@@ -7,6 +7,7 @@ import {BrowserRouter as Router, Link, Match, Miss} from 'react-router';
 //would like to classify by instrument
 
 const App = () => {
+  render() {
   return (
     <Router>
     <div>
@@ -16,7 +17,8 @@ const App = () => {
         <li><Link to="/hearbands">Hear Some Bands</Link></li>
       </ul>
     </div>
-  )
+  );
+  }
 }
 
 export default App;
