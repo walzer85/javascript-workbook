@@ -6,6 +6,18 @@ import {BrowserRouter as Router, Link, Match, Miss} from 'react-router-dom';
 //would like to print out the values a user as entered
 //would like to classify by instrument
 
+const home = () => {
+
+};
+
+const setup = () => {
+
+};
+
+const hearBands = () => {
+
+};
+
 class App extends React.Component {
   render() {
     return (
