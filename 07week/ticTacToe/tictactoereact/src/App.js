@@ -13,3 +13,21 @@ const Square = (props) => {
 }
 
 //I need to make a board consisting of the squares I created above
+//I have to render a square on the page
+class Board extends React.Component {
+  renderSquare(i) {
+    return <Square />
+  }
+
+  render() {
+    return (
+      <div>
+        <div className="board-row">
+          {this.renderSquare(0)}
+          {this.renderSquare(1)}
+          {this.renderSquare(2)}
+        </div>
+      </div>
+    )
+  }
+}
