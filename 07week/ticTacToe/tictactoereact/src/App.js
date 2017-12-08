@@ -40,10 +40,20 @@ class Board extends React.Component {
         </div>
       </div>
     );
-  }
+  };
+}
 
-  //I need to create how the game actually works now.  This includes changing turns, placing Xs and Os based on clicks, and checking for a winner
-  
+//I need to create how the game actually works now.  This includes changing turns, placing Xs and Os based on clicks, and checking for a winner
+class Game extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      history: [
+        {squares: Array(9).fill(null)}
+      ],
+      
+    }
+  }
 }
 
 export default Board;
