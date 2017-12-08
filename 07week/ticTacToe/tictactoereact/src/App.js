@@ -45,4 +45,4 @@ class Board extends React.Component {
   //I need to
 }
 
-export default App;
+export default Board;
