@@ -19,6 +19,7 @@ class Board extends React.Component {
     return <Square />
   }
 
+//I have to render the the entire rows by calling the renderSquare I made earlier for each spot
   render() {
     return (
       <div>
@@ -27,7 +28,8 @@ class Board extends React.Component {
           {this.renderSquare(1)}
           {this.renderSquare(2)}
         </div>
+
       </div>
-    )
+    );
   }
 }
