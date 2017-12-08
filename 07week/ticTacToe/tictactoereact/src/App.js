@@ -42,7 +42,8 @@ class Board extends React.Component {
     );
   }
 
-  //I need to
+  //I need to create how the game actually works now.  This includes changing turns, placing Xs and Os based on clicks, and checking for a winner
+  
 }
 
 export default Board;
