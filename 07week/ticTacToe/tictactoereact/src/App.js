@@ -45,13 +45,15 @@ class Board extends React.Component {
 
 //I need to create how the game actually works now.  This includes changing turns, placing Xs and Os based on clicks, and checking for a winner
 class Game extends React.Component {
+  //I didn't previously understand much of when to use constructor and not, but now I understand that if I am setting a new state within React.Component
   constructor(props) {
     super(props);
+    //This will fill each square with an empty value ready to be filled with either X or O
     this.state = {
       history: [
         {squares: Array(9).fill(null)}
       ],
-      
+
     }
   }
 }
