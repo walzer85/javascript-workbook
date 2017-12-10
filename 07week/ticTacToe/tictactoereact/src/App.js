@@ -48,13 +48,20 @@ class Game extends React.Component {
   //I didn't previously understand much of when to use constructor and not, but now I understand that if I am setting a new state within React.Component
   constructor(props) {
     super(props);
-    //This will fill each square with an empty value ready to be filled with either X or O
+    //This will fill each square with an empty value ready to be filled with either X or O, set the game to the furst turn, and set the player turn as X.
     this.state = {
       history: [
         {squares: Array(9).fill(null)}
       ],
+      turnNumber: 0,
+      xFirst: true
+    };
+  }
 
-    }
+  //I need to set what happens when a player clicks
+  handleclci(i) {
+    //history checks which turn you are on and readys the next one
+    const history = this.state.history.slice(0, this.state.turnNumber + 1);
   }
 }
 
