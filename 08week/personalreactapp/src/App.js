@@ -27,7 +27,9 @@ class OurBand extends Component {
       }
     };
 
-    handleChange = (e) => {
+
+
+    handleSubmit = (e) => {
       this.setState({
         name: e.target.name,
         instrument : e.target.instrument,
@@ -35,17 +37,17 @@ class OurBand extends Component {
       });
     };
 
-    const home = () => {
-
-    };
-
-    const setup = () => {
-
-    };
-
-    const hearBands = () => {
-
-    };
+    // const home = () => {
+    //
+    // };
+    //
+    // const setup = () => {
+    //
+    // };
+    //
+    // const hearBands = () => {
+    //
+    // };
 
   render() {
     return (
@@ -77,6 +79,7 @@ class OurBand extends Component {
           onChange={this.handleChange}
       />
       <TextField
+        id='text-field'
         value={this.state.yearsPlayed}
         floatingLabelText="How long have you played it?"
         onChange={this.handleChange}
@@ -87,4 +90,4 @@ class OurBand extends Component {
   }
 }
 
-export default App;
+export default OurBand;
