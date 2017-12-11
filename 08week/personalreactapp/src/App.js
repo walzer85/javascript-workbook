@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
+import LeftNav from 'material-ui/left-nav';
 import TextField from 'material-ui/TextField';
 import IconButton from 'material-ui/IconButton';
 import IconMenu from 'material-ui/IconMenu';
@@ -20,17 +21,19 @@ class OurBand extends Component {
     constructor(props) {
       super(props);
 
-        this.state = {
-        name: '',
-        instrument: '',
-        yearsPlayed: '',
-      }
-    };
+      this.state = {
+      name: '',
+      instrument: '',
+      yearsPlayed: '',
+    }
+  };
 
 
 
-    handleSubmit = (e) => {
+    handleChange = (e) => {
+      e.preventDefault();
       this.setState({
+        ...this.state,
         name: e.target.name,
         instrument : e.target.instrument,
         yearsPlayed: e.target.yearsPlayed
@@ -55,19 +58,12 @@ class OurBand extends Component {
         <MuiThemeProvider>
         <AppBar
           title="Let's Make a Band!!"
-          iconClassNameRight="muidocs-icon-navigation-expand-more">
-          <IconMenu
-             iconButtonElement={
-               <IconButton><MoreVertIcon /></IconButton>
-             }
-             targetOrigin={{horizontal: 'right', vertical: 'top'}}
-             anchorOrigin={{horizontal: 'right', vertical: 'top'}}
-           >
-             <MenuItem primaryText="Our Band" />
-             <MenuItem primaryText="Setups" />
-             <MenuItem primaryText="Hear Some Bands" />
-           </IconMenu>
-         </AppBar>
+          iconClassNameRight="muidocs-icon-navigation-expand-more" />
+        <LeftNav ref='LeftNav' docked='false'
+          home={this.home}
+          instrument={this.instrument}
+          yearsPlayed={this.yearsPlayed}
+
         <TextField
         value={this.state.name}
         floatingLabelText="What is your name?"
