@@ -29,7 +29,10 @@ class OurBand extends Component {
     }
   };
 
-    handleToggle = () => this.setState({open: !this.state.open});
+    handleToggle = (e) => {
+      e.preventDefault();
+      this.setState({open: false});
+    }
 
     handleClose = () => this.setState({open: false});
 
@@ -59,8 +62,11 @@ class OurBand extends Component {
     return (
       <div className="App">
         <MuiThemeProvider>
-        <AppBar title="Let's Make a Band!!" />
-          <RaisedButton label='Open Drawer' onClick={this.handleToggle} />
+        <AppBar
+          title="Let's Make a Band!!"
+          iconClassNameRight="muidocs-icon-navigation-expand-more"
+        />
+        <RaisedButton label='Open Drawer' onClick={this.handleToggle} />
         <Drawer ref='Drawer' docked='false'
           home={this.home}
           instrument={this.instrument}
