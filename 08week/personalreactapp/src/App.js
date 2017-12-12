@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import './App.css';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
-import LeftNav from 'material-ui/left-nav';
+import Drawer from 'material-ui/Drawer';
 import TextField from 'material-ui/TextField';
 import IconButton from 'material-ui/IconButton';
 import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
+import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import Toggle from 'material-ui/Toggle';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
@@ -28,7 +29,9 @@ class OurBand extends Component {
     }
   };
 
+    handleToggle = () => this.setState({open: !this.state.open});
 
+    handleClose = () => this.setState({open: false});
 
     handleChange = (e) => {
       e.preventDefault();
@@ -56,15 +59,21 @@ class OurBand extends Component {
     return (
       <div className="App">
         <MuiThemeProvider>
-        <AppBar
-          title="Let's Make a Band!!"
-          iconClassNameRight="muidocs-icon-navigation-expand-more" />
-        <LeftNav ref='LeftNav' docked='false'
+        <AppBar title="Let's Make a Band!!" />
+          <RaisedButton label='Open Drawer' onClick={this.handleToggle} />
+        <Drawer ref='Drawer' docked='false'
           home={this.home}
           instrument={this.instrument}
           yearsPlayed={this.yearsPlayed}
-
-        <TextField
+          open={this.state.open}
+          onRequestChange={open => this.setState({open})}
+        >
+        <MenuItem onClick={this.handleClose}>Home</MenuItem>
+        <MenuItem onClick={this.handleClose}>Setup</MenuItem>
+        <MenuItem onClick={this.handleClose}>Hear Some Bands!</MenuItem>
+        </Drawer>
+      <TextField
+        id='text-field'
         value={this.state.name}
         floatingLabelText="What is your name?"
         onChange={this.handleChange}
