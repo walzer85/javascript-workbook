@@ -4,6 +4,8 @@ body {
 }
 
 .header {
+  width: 70%;
+  height: 250px;
   text-align: center;
   font-size: 32px;
   font-family: sans-serif;
