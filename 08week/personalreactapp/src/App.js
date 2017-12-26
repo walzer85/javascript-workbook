@@ -9,7 +9,7 @@ import './App.css'
 
 
 
-class NameForm extends React.Component {
+class BandForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -18,7 +18,7 @@ class NameForm extends React.Component {
       yearsPlayed: []
     };
 
-    this.handleChange = this.handleChange.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -27,13 +27,15 @@ class NameForm extends React.Component {
   }
 
   handleSubmit(event) {
-    render(){
-      return (
-        <div>
-        
-        </div>
-      )
-    }
+    alert('A name was submitted: ' + this.state.value);
+    event.preventDefault();
+    // render() {
+    //   return(
+    //     <div>
+    //       //this is where the card with the inputs displayed will go
+    //     </div>
+    //   )
+    // }
   }
 
   render() {
@@ -41,31 +43,32 @@ class NameForm extends React.Component {
       <div className='AppStyling'>
         <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
           <AppBar title='Make A Band!' />
-          <form className='FormStyling' onSubmit={this.handleSubmit}>
+          <form className='FormStyling' onSubmit={this.handleSubmit}><br />
             <label>
               Name:
-              <input type="text" value={this.state.name} onChange={this.handleChange} />
-            </label>
+              <input type="text" value={this.state.value} onChange={this.handleChange} />
+            </label><br />
             <input type="submit" value="Submit" />
           </form>
-          <form className='FormStyling' onSubmit={this.handleSubmit}>
+          <form className='FormStyling' onSubmit={this.handleSubmit}><br />
             <label>
               Instrument:
-              <input type="text" value={this.state.instrument} onChange={this.handleChange} />
-            </label>
+              <input type="text" value={this.state.value} onChange={this.handleChange} />
+            </label><br />
             <input type="submit" value="Submit" />
           </form>
-          <form className='FormStyling' onSubmit={this.handleSubmit}>
+          <form className='FormStyling' onSubmit={this.handleSubmit}><br />
             <label>
               Years Played:
-              <input type="text" value={this.state.yearsPlayed} onChange={this.handleChange} />
-            </label>
+              <input type="text" value={this.state.value} onChange={this.handleChange} />
+            </label><br />
             <input type="submit" value="Submit" />
           </form>
         </MuiThemeProvider>
       </div>
     );
   }
+
 }
 
-export default NameForm;
+export default BandForm;
