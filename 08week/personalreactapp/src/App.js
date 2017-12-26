@@ -12,19 +12,28 @@ import './App.css'
 class NameForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {value: ''};
+    this.state = {
+      name: [],
+      instrument: [],
+      yearsPlayed: []
+    };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(event) {
+  handleInputChange(event) {
     this.setState({value: event.target.value});
   }
 
   handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
-    event.preventDefault();
+    render(){
+      return (
+        <div>
+        
+        </div>
+      )
+    }
   }
 
   render() {
@@ -35,21 +44,21 @@ class NameForm extends React.Component {
           <form className='FormStyling' onSubmit={this.handleSubmit}>
             <label>
               Name:
-              <input type="text" value={this.state.value} onChange={this.handleChange} />
+              <input type="text" value={this.state.name} onChange={this.handleChange} />
             </label>
             <input type="submit" value="Submit" />
           </form>
           <form className='FormStyling' onSubmit={this.handleSubmit}>
             <label>
               Instrument:
-              <input type="text" value={this.state.value} onChange={this.handleChange} />
+              <input type="text" value={this.state.instrument} onChange={this.handleChange} />
             </label>
             <input type="submit" value="Submit" />
           </form>
           <form className='FormStyling' onSubmit={this.handleSubmit}>
             <label>
               Years Played:
-              <input type="text" value={this.state.value} onChange={this.handleChange} />
+              <input type="text" value={this.state.yearsPlayed} onChange={this.handleChange} />
             </label>
             <input type="submit" value="Submit" />
           </form>
