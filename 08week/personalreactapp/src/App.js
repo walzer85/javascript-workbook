@@ -33,7 +33,7 @@ class BandForm extends React.Component {
   handleSubmit(event) {
     alert('A name was submitted: ' + this.state.name);
     alert('A instrument was submitted: ' + this.state.instrument);
-    alert('Years played was submitted: ' + this.state.yearsPlayed);    
+    alert('Years played was submitted: ' + this.state.yearsPlayed);
     event.preventDefault();
     // render() {
     //   return(
@@ -70,6 +70,11 @@ class BandForm extends React.Component {
             </label><br />
             <input type="submit" value="Submit" />
           </form>
+          <div>
+            <h3>Name: {this.state.name}</h3>
+            <h3>Instrument: {this.state.instrument}</h3>
+            <h3>Years Played: {this.state.yearsPlayed}</h3>
+          </div>
         </MuiThemeProvider>
       </div>
     );
