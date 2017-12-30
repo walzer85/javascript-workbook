@@ -52,21 +52,17 @@ class BandForm extends React.Component {
           <form className='FormStyling' onSubmit={this.handleSubmit}><br />
             <label>
               Name:
-              <input type="text" value={this.state.name} onChange={this.handleChange} />
+              <input type="text" value={this.state.name} onChange={this.handleChange(this, 'name')} />
             </label><br />
-            <input type="submit" value="Submit" />
-          </form>
-          <form className='FormStyling' onSubmit={this.handleSubmit}><br />
+            <input type="submit" value="Submit" /><br />
             <label>
               Instrument:
-              <input type="text" value={this.state.value} onChange={this.handleChange} />
+              <input type="text" value={this.state.instrument} onChange={this.handleChange(this, 'instrument')} />
             </label><br />
-            <input type="submit" value="Submit" />
-          </form>
-          <form className='FormStyling' onSubmit={this.handleSubmit}><br />
+            <input type="submit" value="Submit" /><br />
             <label>
               Years Played:
-              <input type="text" value={this.state.value} onChange={this.handleChange} />
+              <input type="text" value={this.state.yearsPlayed} onChange={this.handleChange(this, 'yearsPlayed')} />
             </label><br />
             <input type="submit" value="Submit" />
           </form>
