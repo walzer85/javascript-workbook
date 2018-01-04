@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../node_modules/spectre.css/dist/spectre.min.css';
 import './styles.css';
-import FormContainer from './containers/FormContainer';
+import PlayerCard from './playercard.js';
 
 class App extends Component {
   render() {
@@ -10,7 +10,7 @@ class App extends Component {
         <div className="columns">
           <div className="col-md-9 centered">
             <h3>React.js Controlled Form Components</h3>
-            <FormContainer />
+            <Playercard />
           </div>
         </div>
       </div>
