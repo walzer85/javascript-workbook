@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import SingleInput from './singleinput.js'
 
 class PlayerCard extends Component {
