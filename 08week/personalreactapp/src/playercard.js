@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import SingleInput from './singleinput.js'
 
 class PlayerCard extends Component {
   constructor(props, context) {
@@ -28,15 +29,18 @@ class PlayerCard extends Component {
   }
 
   handleNameChange(e) {
-    this.setState({ name: e.target.value} () => console.log('name:' this.state.name));
+    this.setState({ name: e.target.value});
+    console.log(`name: ${this.state.name}`);
   }
 
   handleInstrumentChange(e) {
-    this.setState({ instruments: e.target.value} () => console.log('instrument:' this.state.instrument))
+    this.setState({ instrument: e.target.value});
+    console.log(`instrument: ${this.state.instrument}`);
   }
 
   handleYearsPlayedChange(e) {
-    this.setState({ yearsPlayed: e.target.value} () => console.log('years played:' this.state.yearsPlayed))
+    this.setState({ yearsPlayed: e.target.value});
+    console.log(`years played: ${this.state.yearsPlayed}`);
   }
 
   handleClear(e) {
@@ -55,18 +59,33 @@ class PlayerCard extends Component {
       instrument: this.state.instrument,
       yearsPlayed: this.state.yearsPlayed
     }
-    console.log('Send this in a POST request:' formPayload);
+    console.log(`Send this in a POST request: ${formPayload}`);
     this.handleClear(e);
   }
 
   render() {
-    var todoEntries = this.props.entries;
-    var listItems = todoEntries.map(this.createTasks);
-
     return (
-      <ul className="theList">
-          {listItems}
-      </ul>
+      <form className='container' onSubmit={this.handleSubmit}>
+        <h4>Band Submission Form</h4>
+        <SingleInput
+          inputType={'text'}
+          name={'name'}
+          controlFunc={this.handleNameChange}
+          content={this.state.name}
+          placeholder={'Type First and Last Name'} />
+        <SingleInput
+          inputType={'text'}
+          name={'instrument'}
+          controlFunc={this.handleInstrumentChange}
+          content={this.state.instrument}
+          placeholder={'TWhat Instrument Do You Play?'} />
+        <SingleInput
+          inputType={'text'}
+          name={'yearsPlayed'}
+          controlFunc={this.handleYearsPlayedChange}
+          content={this.state.yearsPlayed}
+          placeholder={'How Many Years Have You Played?'} />
+      </form>
     );
   }
 };
