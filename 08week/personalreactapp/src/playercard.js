@@ -72,19 +72,19 @@ class PlayerCard extends Component {
           name={'name'}
           controlFunc={this.handleNameChange}
           content={this.state.name}
-          placeholder={'Type First and Last Name'} />
+          placeholder={'Name'} />
         <SingleInput
           inputType={'text'}
           name={'instrument'}
           controlFunc={this.handleInstrumentChange}
           content={this.state.instrument}
-          placeholder={'TWhat Instrument Do You Play?'} />
+          placeholder={'Instrument'} />
         <SingleInput
           inputType={'text'}
           name={'yearsPlayed'}
           controlFunc={this.handleYearsPlayedChange}
           content={this.state.yearsPlayed}
-          placeholder={'How Many Years Have You Played?'} />
+          placeholder={'Years You Have Played'} />
       </form>
     );
   }
