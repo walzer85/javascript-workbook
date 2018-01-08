@@ -6,7 +6,10 @@
   background-color: lightgrey;
 }
 
-
+.singleinput {
+  width: 1000px;
+  height: 30px;
+}
 
 .FormStyling {
   align-items: center;

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SingleInput from './singleinput.js'
+import './App.css'
 
 class PlayerCard extends Component {
   constructor(props, context) {
@@ -67,19 +68,19 @@ class PlayerCard extends Component {
     return (
       <form className='container' onSubmit={this.handleSubmit}>
         <h4>Band Submission Form</h4>
-        <SingleInput
+        <SingleInput className='singleinput'
           inputType={'text'}
           name={'name'}
           controlFunc={this.handleNameChange}
           content={this.state.name}
           placeholder={'Name'} />
-        <SingleInput
+        <SingleInput className='singleinput'
           inputType={'text'}
           name={'instrument'}
           controlFunc={this.handleInstrumentChange}
           content={this.state.instrument}
           placeholder={'Instrument'} />
-        <SingleInput
+        <SingleInput className='singleinput'
           inputType={'text'}
           name={'yearsPlayed'}
           controlFunc={this.handleYearsPlayedChange}
