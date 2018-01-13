@@ -68,7 +68,7 @@ class PlayerCard extends Component {
 
   render() {
     return (
-      <MuiThemeProvider>
+      <div>
       <form className='container' onSubmit={this.handleSubmit}>
         <h4>Band Submission Form</h4>
         <SingleInput className='singleinput'
@@ -90,8 +90,10 @@ class PlayerCard extends Component {
           content={this.state.yearsPlayed}
           placeholder={'Years You Have Played'} />
       </form>
-      <RaisedButton label="Primary" primary={true} style={this.style} onClick={this.handleSubmit}/>
+      <MuiThemeProvider>
+        <RaisedButton type="submit" label="Primary" primary={true} style={this.style} onClick={this.handleSubmit}/>
       </MuiThemeProvider>
+      </div>
     );
   }
 };
