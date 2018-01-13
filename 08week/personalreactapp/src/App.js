@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import PlayerCard from './playercard.js';
 import './App.css'
+// import './assets/css/fonts.css';
+
 
 //This is the home display.  Displays the input card and a submit button
 class BandForm extends Component {
