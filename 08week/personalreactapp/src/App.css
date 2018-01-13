@@ -21,3 +21,10 @@
   border-bottom: 50px blue;
   background-color: lightblue;
 }
+
+.header {
+  margin: 25px;
+  border-radius: 12%;
+  border-color: blue;
+  border: 25px;
+}

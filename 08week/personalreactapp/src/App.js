@@ -10,7 +10,7 @@ class BandForm extends Component {
       <div className="AppStyling">
         <div className="columns">
           <div className="col-md-9 centered">
-            <h3>Wanna Make a Band!?!?</h3>
+            <h3 className='header'>Wanna Make a Band!?!?</h3>
             <PlayerCard />
           </div>
         </div>

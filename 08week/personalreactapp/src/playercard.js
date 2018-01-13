@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import SingleInput from './singleinput.js'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import RaisedButton from 'material-ui/RaisedButton';
+import SingleInput from './singleinput.js';
 import './App.css'
 
 class PlayerCard extends Component {
@@ -66,6 +68,7 @@ class PlayerCard extends Component {
 
   render() {
     return (
+      <MuiThemeProvider>
       <form className='container' onSubmit={this.handleSubmit}>
         <h4>Band Submission Form</h4>
         <SingleInput className='singleinput'
@@ -87,6 +90,8 @@ class PlayerCard extends Component {
           content={this.state.yearsPlayed}
           placeholder={'Years You Have Played'} />
       </form>
+      <RaisedButton label="Primary" primary={true} style={this.style} onClick={this.handleSubmit}/>
+      </MuiThemeProvider>
     );
   }
 };
