@@ -17,17 +17,17 @@ class PlayerCard extends Component {
     this.handleYearsPlayedChange = this.handleYearsPlayedChange.bind(this);
   }
 
-  componentDidMount() {
-      fetch('.fake_db.json')
-        .then(res => res.json())
-        .then(data => {
-            this.setState({
-              name: data.name,
-              instrument: data.instrument,
-              yearsPlayed: data.yearsPlayed
-            });
-        });
-  }
+  // componentDidMount() {
+  //     fetch('.fake_db.json')
+  //       .then(res => res.json())
+  //       .then(data => {
+  //           this.setState({
+  //             name: data.name,
+  //             instrument: data.instrument,
+  //             yearsPlayed: data.yearsPlayed
+  //           });
+  //       });
+  // }
 
   handleNameChange(e) {
     this.setState({ name: e.target.value});
