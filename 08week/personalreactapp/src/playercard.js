@@ -3,6 +3,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
 import SingleInput from './singleinput.js';
 import './App.css'
+import './playerdisplay.js'
 
 class PlayerCard extends Component {
   constructor(props, context) {
@@ -57,12 +58,19 @@ class PlayerCard extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    
     const formPayload = {
       name: this.state.name,
       instrument: this.state.instrument,
       yearsPlayed: this.state.yearsPlayed
     }
-    console.log(`Send this in a POST request: ${formPayload}`);
+
+    render ({
+      return (
+        <PlayerDisplay />
+      )
+    })
+
     this.handleClear(e);
   }
 
