@@ -3,7 +3,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
 import SingleInput from './singleinput.js';
 import './App.css'
-import './playerdisplay.js'
+import PlayerDisplay from './playerdisplay.js'
 
 class PlayerCard extends Component {
   constructor(props, context) {
@@ -58,7 +58,7 @@ class PlayerCard extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    
+
     const formPayload = {
       name: this.state.name,
       instrument: this.state.instrument,
